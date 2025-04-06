@@ -7,12 +7,13 @@ printf("Super Trunfo! \n");
     char estado1, estado2;
     char codigo1[50], codigo2[50];
     char cidade1[50], cidade2[50];
-    int populacão1, população2;
+    unsigned long int populacão1, população2;
     int pontos1, pontos2;
     float Area1, Area2;
     float PIB1, PIB2;
     float densidade1, densidade2;
     float capita1, capita2;
+    float superpoder1, superpoder2;
 
     //entrada de dados da primeira carta
     
@@ -26,7 +27,7 @@ printf("Super Trunfo! \n");
     scanf(" %[^\n]", cidade1);
 
     printf("população:\n");
-    scanf("%d", &populacão1);
+    scanf("%lu", &populacão1);
 
     printf("Area:\n");
     scanf("%f", &Area1);
@@ -45,7 +46,7 @@ printf("Super Trunfo! \n");
     printf("codigo: %s\n",codigo1);
     printf("cidade: %s\n",cidade1);
    
-    printf("população: %d\n",populacão1);
+    printf("população: %lu\n",populacão1);
     printf("Área: %.2f\n",Area1);
    
     printf("PIB: %.2f\n",PIB1);
@@ -58,7 +59,12 @@ printf("Super Trunfo! \n");
     capita1 = (float)(populacão1 / PIB1);
 
     printf("pib per capita: %.2f\n", capita1);
+
+    // cadastro do superpoder
+
+    superpoder1 = (float)(populacão1 + Area1 + PIB1 + pontos1 + capita1 + 1 / densidade1);
    
+    printf("super poder da primeira carta: %.3f\n", superpoder1);
  // entrada de dados segunda carta
 
     printf("estado:\n");
@@ -71,7 +77,7 @@ printf("Super Trunfo! \n");
     scanf(" %[^\n]", cidade2);
 
     printf("população:\n");
-    scanf("%d", &população2);
+    scanf("%lu", &população2);
 
     printf("Área:\n");
     scanf("%f", &Area2);
@@ -90,7 +96,7 @@ printf("Super Trunfo! \n");
   printf("codigo: %s\n",codigo2);
   printf("cidade: %s\n",cidade2);
 
-  printf("população: %d\n",população2);
+  printf("população: %lu\n",população2);
   printf("Área: %.2f\n",Area2);
 
   printf("PIB: %.2f\n",PIB2);
@@ -104,8 +110,78 @@ printf("Super Trunfo! \n");
 
   printf("PIB per capita: %.2f\n", capita2);
 
-  return 0;
+  //cadastro do super poder das segunda carta
 
+  superpoder2 = (float)(população2 + Area2 + PIB2 + pontos2 + capita2 + 1 / densidade2);
+  
+  printf("super poder da segunda carta: %.3f\n", superpoder2);
+
+  //comparações de valores 
+
+  if (populacão1 > população2){
+   printf("populaçao: carta 1 venceu\n");
+  }
+   else if (população2 > populacão1){
+      printf("população: carta 2 venceu\n");
+   }
+  
+  if (Area1 > Area2){ 
+   printf("area: carta 1 venceu\n");
+  }
+  else if (Area2 > Area1){ 
+   printf("area: carta 2 venceu\n");
+  }
+
+  if (PIB1 > PIB2)
+  {
+   printf("PIB: carta 1 venceu\n");
+  }
+  else if (PIB2 > PIB1)
+  {
+   printf("PIB: carta 2 venceu\n");
+  }
+
+  if (pontos1 > pontos2)
+  {
+   printf("Pontos turisticos: carta 1 venceu\n");
+  }
+  
+  else if (pontos2 > pontos1)
+  {
+   printf("Pontos turisticos: carta 2 venceu\n");
+  }
+
+  if (densidade1 > densidade2)
+  {
+   printf("Densidade populacional: carta 1 venceu\n");
+  }
+  
+  else if (densidade2 > densidade1)
+  {
+    printf("Densidade populacional: carta 2 venceu\n");
+  }
+  
+  if (capita1 > capita2)
+  {
+   printf("PIB per capita: carta 1 venceu\n");
+  }
+  
+  else if (capita2 > capita1)
+  {
+   printf("PIB per capita: carta 2 venceu\n");
+  }
+  
+  if (superpoder1 > superpoder2)
+  {
+   printf("Superpoder: carta 1 venceu\n");
+  }
+  
+  else if (superpoder2 > superpoder1)
+  {
+   printf("superpoder: carta 2 venceu\n");
+  }
+  
+  return 0;
 
    
 }
